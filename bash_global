@@ -1,0 +1,129 @@
+#if [ $BASH_GLOBAL ]; then
+#    echo "Not sourcing bash_global again"
+#    return
+#fi
+#BASH_GLOBAL=1
+
+### Paths
+PATH=$HOME/bin:/usr/games:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/games/bin:$HOME/local/node/bin:$HOME/.bin:$HOME/.jorbin/bin:$PATH
+MANPATH=$HOME/.software/man:/opt/local/man:/opt/local/share/man:$MANPATH
+
+
+### Prompt variable
+# Color the hostname
+HOSTNAME=`hostname|sed -e 's/\..*$//'`
+
+PRODUCTION_HOSTS=( apb00 apb01 apb02 apb03 apw00 apw01 apw02 apw03 apd00 apd01 lpw00 lsu06 lpb00 lpb01 )
+for host in "${PRODUCTION_HOSTS[@]}"
+do
+    if [ $HOSTNAME = "$host" ]; then
+        export HOST_COLOR="\[\033[1;31m\]"
+        break
+    fi
+done
+if [ $HOSTNAME = 'svr-dev-rw1' ]; then
+    export HOST_COLOR="\[\033[1;34m\]"
+fi
+
+# Color the colon red & capitalize hostname if root
+COLON_COLOR='0m'
+if [ ${UID} -eq 0 ]; then
+    COLON_COLOR='1;31m'
+fi
+if [ ${UID} -eq 0 ]; then
+    HOSTNAME="`echo $HOSTNAME|tr '[a-z]' '[A-Z]'`"
+fi
+
+function build_prompt {
+    EXITSTATUS="$?"
+
+    PROMPT="$HOST_COLOR$HOSTNAME\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[33m\]\w\[\033[00m\]\[\033[01;33m\]\$\[\033[00m\] "
+
+    # Red background if the last command was unhappy
+    if [ "${EXITSTATUS}" -eq 0 ]
+    then
+       PS1="${PROMPT}"
+    else
+       PS1="\[\033[41m\]${PROMPT}"
+    fi
+
+    # Change the titlebar in xterms
+    echo -ne "\033]0;${HOSTNAME}:${PWD}\007"
+
+    # Write history after every command
+    history -a
+}
+PROMPT_COMMAND=build_prompt
+
+# System installed extensions
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+if [ -f /etc/profile.d/autojump.bash ]; then
+    . /etc/profile.d/autojump.bash
+fi
+# Homebrew installed extensions
+if [ -e /usr/local/bin/brew ]; then
+    # Completion
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
+    fi
+
+    # Autojump
+    if [ -f `brew --prefix`/etc/autojump.bash ]; then
+        . `brew --prefix`/etc/autojump.bash
+    fi
+fi
+
+# Ignore .svn directories when completing
+export FIGNORE=".svn"
+bind 'set match-hidden-files off'
+
+# Figure out what system we are on
+if [ `uname` = Darwin ]; then
+    export OS_TYPE='macos'
+elif [ `uname` = FreeBSD ]; then
+    export OS_TYPE='freebsd'
+else
+    export OS_TYPE='linux'
+fi
+
+# Different options for ls depending on system
+if [ $OS_TYPE = 'macos' ]; then
+    export LS_OPTIONS='-G'
+elif [ $OS_TYPE = 'freebsd' ]; then
+    export LS_OPTIONS='-G'
+elif [ $OS_TYPE = 'linux' ]; then
+    # Proably GNU utils
+    export LS_OPTIONS='--color=auto'
+fi
+
+# Make 'ls' output legible
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+### Standard variables
+export PAGER='less'
+export EDITOR='vim'
+export BROWSER='firefox'
+export CC='gcc'
+# Make perl localization work
+export LC_ALL="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+### Capture more history
+#"I know I've used that command before, but I can't remember the syntax"
+export HISTFILESIZE=500000
+export HISTSIZE=500000
+shopt -s histappend
+# Combine multiline commands into one in historty
+shopt -s cmdhist
+# Ignore duplicates, ls without options and builtin commands
+HISTCONTROL=ignoredups
+export HISTIGNORE="&:ls:ll:la:lh:sl"
+# Store a timestamp in the history
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
