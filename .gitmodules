@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git@github.com:aaronjorbin/.vim.git
+[submodule "todo.txt-cli"]
+	path = todo.txt-cli
+	url = https://github.com/ginatrapani/todo.txt-cli.git

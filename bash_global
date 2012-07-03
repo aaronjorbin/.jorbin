@@ -5,7 +5,7 @@
 #BASH_GLOBAL=1
 
 ### Paths
-PATH=$HOME/bin:/usr/games:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/games/bin:$HOME/local/node/bin:$HOME/.bin:$HOME/.jorbin/bin:$PATH
+PATH=$HOME/.jorbin/bin:$HOME/bin:/usr/games:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/games/bin:$HOME/local/node/bin:$HOME/.bin:$HOME/.jorbin/bin:$PATH
 MANPATH=$HOME/.software/man:/opt/local/man:/opt/local/share/man:$MANPATH
 
 

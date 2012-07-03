@@ -92,3 +92,6 @@ alias gsrebase='git-svn-rebase'
 alias routes='netstat -nr -f inet'
 # vim should assume -p
 alias vim='vim -p'
+
+# todo.txt should be t
+alias t='~/.jorbin/todo.txt-cli/todo.sh'
