@@ -7,3 +7,6 @@
 [submodule "scripts/bash-histor-punchcard"]
 	path = scripts/bash-histor-punchcard
 	url = https://github.com/askedrelic/bash-history-punchcard.git
+[submodule "others/bash-it"]
+	path = others/bash-it
+	url = https://github.com/revans/bash-it.git
