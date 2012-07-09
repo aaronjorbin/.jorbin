@@ -114,6 +114,11 @@ export LANGUAGE="en_US.UTF-8"
 #"I know I've used that command before, but I can't remember the syntax"
 export HISTFILESIZE=500000
 export HISTSIZE=500000
+# Add a time stamp to my bash history so I can create a github style punchcard
+# see https://github.com/askedrelic/Bash-History-Punchcard and http://asktherelic.com/2009/11/10/bash-history-punchcard/
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
+
+
 shopt -s histappend
 # Combine multiline commands into one in historty
 shopt -s cmdhist
@@ -123,7 +128,7 @@ export HISTIGNORE="&:ls:ll:la:lh:sl"
 # Store a timestamp in the history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f /usr/local/etc/bash_completion ]; then
+    ./usr/local/etc/bash_completion
 fi
 
