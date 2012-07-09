@@ -4,3 +4,6 @@
 [submodule "todo.txt-cli"]
 	path = todo.txt-cli
 	url = https://github.com/ginatrapani/todo.txt-cli.git
+[submodule "scripts/bash-histor-punchcard"]
+	path = scripts/bash-histor-punchcard
+	url = https://github.com/askedrelic/bash-history-punchcard.git
