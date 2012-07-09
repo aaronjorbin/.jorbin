@@ -2,6 +2,8 @@
 ##### Basic Aliases #####
 #########################
 alias ls='ls $LS_OPTIONS'
+alias lsa='ls -a'
+alias lsla='ls -la'
 alias ll="ls -l"
 alias lo="ls -o"
 alias lh="ls -lh"
@@ -12,7 +14,8 @@ alias s="ls"
 #alias rm="rm -i"    # Make rming a slow and painful process
 # Show most recent files at the bottom
 alias ltr="ls -ltr"
-alias j="autojump"
+alias j="j"
+alias J="autojump"
 
 # Why doesn't everyone have these?
 alias ..="cd .."
@@ -87,3 +90,5 @@ alias gitb='git branch'
 alias gsrebase='git-svn-rebase'
 
 alias routes='netstat -nr -f inet'
+# vim should assume -p
+alias vim='vim -p'
