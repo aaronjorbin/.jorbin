@@ -9,10 +9,19 @@ ubergrep() { #search all files
     ack --smart-case $1
 }
 jsgrep() { #search js files
-    ack --smart-case --type=js
+    ack --smart-case --type=js $1
 }
 cssgrep() { #search css files
-    ack --smart-case --type=css
+    ack --smart-case --type=css $1
+}
+sassgrep() { # search development css files
+find . \( -name "*.scss" -print \)  | xargs grep -n "$1"
+}
+jssgrep() { # search development css files
+find . \( -name "*.js" -print \)  | xargs grep -n "$1"
+}
+hgrep(){
+history | grep "$1"
 }
 # I often want awk '{print <var>}'
 function fawk {
