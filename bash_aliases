@@ -88,6 +88,7 @@ alias gitr='git r'
 alias gitf='git f'
 alias gitb='git branch'
 alias gsrebase='git-svn-rebase'
+alias yoink='git stash && git pull && git stash pop'
 
 alias routes='netstat -nr -f inet'
 # vim should assume -p
