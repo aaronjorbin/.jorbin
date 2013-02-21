@@ -2,7 +2,9 @@
 phpgrep() { # search php files
     ack --smart-case --type=php $1
 }
-
+rbgrep() { # search php files
+    ack --smart-case --type=ruby $1
+}
 ubergrep() { #search all files
     ack --smart-case $1
 }
