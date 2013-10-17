@@ -1,5 +1,5 @@
 # .bashrc
-PATH=/usr/local/bin/:$PATH; export PATH
+PATH=/usr/local/bin:$PATH; export PATH
 source /etc/profile
 source ~/.jorbin/bash_global
 source ~/.jorbin/bash_aliases
@@ -13,5 +13,18 @@ if [ -f ~/.bash_local ]
     source ~/.bash_local
 fi
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Add npm installed packages
+export PATH="/usr/local/share/npm/bin:$PATH"
+
+source impromptu
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# WP-CLI directory
+PATH=/Users/aaronjorbin/.wp-cli/bin:$PATH
+
+export WP_CLI_PHP=/Applications/xampp/xamppfiles/bin/php
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt

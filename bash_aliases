@@ -96,3 +96,11 @@ alias vim='vim -p'
 
 # todo.txt should be t
 alias t='~/.jorbin/todo.txt-cli/todo.sh'
+
+alias phpsyntax='for f in $(find . -name "*.php"); do php -l $f; done'
+
+alias sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+
+alias subtree="~/sandbox/git/contrib/subtree/git-subtree.sh"
+
+alias bigpy="python ~/sandbox/bigsetup/bigpy/big.py"

@@ -52,6 +52,7 @@ function getip {
     host $1|grep " has address "|cut -d" " -f4
 }
 
+sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp'"
 
 difff() {
     svn diff > ~/diff.diff
