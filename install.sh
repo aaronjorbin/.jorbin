@@ -5,6 +5,8 @@ $CURRENTDIR = `pwd`
 ln -sfnv ~/.jorbin/bashrc ~/.bashrc
 source ~/.bashrc
 
+ln -sfnv ~/.jorbin/ansiweatherrc ~/.ansiweatherrc
+
 # get submodules
 git submodule init
 git submodule update
