@@ -10,3 +10,6 @@
 [submodule "others/bash-it"]
 	path = others/bash-it
 	url = https://github.com/revans/bash-it.git
+[submodule "others/ansiweather"]
+	path = others/ansiweather
+	url = git@github.com:fcambus/ansiweather.git
