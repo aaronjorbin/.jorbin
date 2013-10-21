@@ -104,3 +104,5 @@ alias sniff="sudo ngrep -W byline -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias subtree="~/sandbox/git/contrib/subtree/git-subtree.sh"
 
 alias bigpy="python ~/sandbox/bigsetup/bigpy/big.py"
+
+alias weather="~/.jorbin/others/ansiweather/ansiweather"
