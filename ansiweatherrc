@@ -1,3 +1,4 @@
-location:Washington,DC,US
+location:Manhattan,US
 units:imperial
 
+fetch_cmd:wget -qO-
