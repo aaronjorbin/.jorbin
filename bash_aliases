@@ -106,3 +106,4 @@ alias subtree="~/sandbox/git/contrib/subtree/git-subtree.sh"
 alias bigpy="python ~/sandbox/bigsetup/bigpy/big.py"
 
 alias weather="~/.jorbin/others/ansiweather/ansiweather"
+alias domainless="sed 's/http:\/\/[^\/]*//'"
