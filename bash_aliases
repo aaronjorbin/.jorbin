@@ -107,3 +107,4 @@ alias bigpy="python ~/sandbox/bigsetup/bigpy/big.py"
 
 alias weather="~/.jorbin/others/ansiweather/ansiweather"
 alias domainless="sed 's/http:\/\/[^\/]*//'"
+alias qscut="awk -F'[&]' '{s=0; for (i=1; i<=NF; i++) print $i}'"
