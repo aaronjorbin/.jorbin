@@ -1,15 +1,15 @@
 #!/bin/sh
 $CURRENTDIR = `pwd`
 
+git submodule init
+git submodule update
+
 # .bashrc
 ln -sfnv ~/.jorbin/bashrc ~/.bashrc
 source ~/.bashrc
 
 ln -sfnv ~/.jorbin/ansiweatherrc ~/.ansiweatherrc
 
-# get submodules
-git submodule init
-git submodule update
 
 # ssh.conf
 if [ -f ~/.jorbin/ssh/config ]
