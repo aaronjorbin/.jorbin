@@ -130,3 +130,12 @@ gifify() {
     echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
   fi
 }
+
+
+# cat or zcat all the access logs in a folder 
+# Pass in folder to search in as the only param
+# Likely want > into another file for further use
+access_concat(){
+	find $1 -name "acc*" -not -name "*.gz" -exec cat '{}' \;
+	find $1 -name "acc*" -name "*.gz" -exec zcat '{}' \;
+}
