@@ -5,9 +5,9 @@ autojump - https://github.com/joelthelion/autojump/wiki
 ack - http://betterthangrep.com/
 bash-completion - http://freecode.com/projects/bashcompletion
 
-Varius functions taken and inspired from around the internet.
+Various functions taken and inspired from around the internet.
 Sources include:
 http://andrewnacin.com/2010/05/13/my-wordpress-bash-functions/
 
 Expected to be under root in .jorbin
-Run insall.sh to start 
+Run install.sh to start 
