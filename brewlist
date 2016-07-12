@@ -1,8 +1,6 @@
 ack
 autoconf
 automake
-brew-cask
-curl-ca-bundle
 faac
 ffmpeg
 fontconfig
@@ -20,15 +18,11 @@ libtool
 mplayer
 nasm
 ngrep
-node
 optipng
 ossp-uuid
-phantomjs
 pkg-config
-postgresql
 qt
 readline
-redis
 s3cmd
 texi2html
 wget
