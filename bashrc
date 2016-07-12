@@ -27,4 +27,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=/Users/aaronjorbin/.wp-cli/bin:$PATH
 
 export WP_CLI_PHP=/Applications/xampp/xamppfiles/bin/php
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+
+export NVM_DIR="/Users/aaronjorbin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
