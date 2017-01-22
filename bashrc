@@ -19,8 +19,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Add npm installed packages
 export PATH="/usr/local/share/npm/bin:$PATH"
 
-source impromptu
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # WP-CLI directory
@@ -30,3 +28,11 @@ export WP_CLI_PHP=/Applications/xampp/xamppfiles/bin/php
 
 export NVM_DIR="/Users/aaronjorbin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+unset SSL_CERT_FILE
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+	source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+	GIT_PROMPT_THEME=Solarized
+fi
