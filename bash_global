@@ -127,6 +127,8 @@ HISTCONTROL=ignoredups
 export HISTIGNORE="&:ls:ll:la:lh:sl"
 # Store a timestamp in the history
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S - '
+# Only store one copy of multiple commands
+export HISTCONTROL=ignoreboth:erasedups
 
 # Use curl-ca-bundle
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
